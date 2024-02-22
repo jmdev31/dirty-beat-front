@@ -1,0 +1,71 @@
+<template>
+<div class="container-backoffice">
+  <h2>Back Office</h2>
+	  <form class="container-fluid align-self-center"  novalidate>
+		<div class="container-sm">
+			<label for="nom" class="container-sm">Identifiant</label>
+			<input type="text" class="form-control" id="nom" value="">
+		</div>
+  		<div class="container-sm">
+			<label for="email" class="container-sm">Mot de passe</label>
+			<input type="email" class="form-control" id="email">
+		</div>
+		<div class="col-12 btn-envoyer">
+			<button class="btn btn-warning" type="submit">Se Connecter</button>
+		</div>
+		<div class="col-md-12 mb-3">
+			<label for="mdpperdu" class="form-label" id="mdpperdu">Mot de passe perdu?</label>
+			
+		</div>
+		</form>
+	</div>
+</template>
+
+
+
+<style>
+#form {
+	left: 50%;
+    top: 50%;
+}
+
+template {
+		width: 100%;
+		margin: 20px auto;
+}
+
+.container-backoffice {
+	background-color: black;
+}
+.container-sm, .container-backoffice {
+	color : white;
+	text-align: center;
+}
+.col-12 {
+	color: white;
+}
+
+input .form-label, label .container-sm {
+	text-align: center ;
+}
+
+.btn-envoyer {
+	text-align: center;
+	}
+
+.col-md-12 {
+text-align: center;
+	}
+
+.col-12 {
+text-align: center;
+	}
+#mdpperdu {
+	font-style: italic;
+}
+body {
+	background-color: black;
+}
+
+</style>
+

@@ -3,7 +3,6 @@ import News from '../components/News.vue'
 </script>
 <template>
   <div class="news">
-    <h1></h1>
     <div class="container">
       <img src="@/assets/header_page_news.jpg" alt="headerpage news">
     </div>

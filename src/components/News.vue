@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2>News / Events</h2>
+        <h1>News / Events</h1>
       </div>
     </div>
     <article>
@@ -26,6 +26,9 @@
 </template>
 
 <style scoped>
+h1 {
+  font-weight: bold;
+}
   .article-container {
     justify-content: space-between;
     align-items: center;
