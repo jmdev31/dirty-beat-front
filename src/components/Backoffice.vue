@@ -9,14 +9,14 @@
 			<p></p>
 			<p></p>
 			<p></p>
-		  <h1 >Back Office</h1>
+		  <h1 >Connexion</h1>
 		</div>
 	  </div>
 	  <form class="container-fluid row needs-validation" novalidate>
 		<div class="container-fluid">
-			<label for="nom" class="container-sm">Identifiant</label>
+			<label for="nom" class="container-sm">Email</label>
 			<p></p>
-			<input type="text" class="form-control" id="identifiant" value="">
+			<input type="text" placeholder="Email" v-model="email" class="form-control" id="identifiant" value="">
 		</div>
 		<p></p>
 		<p></p>
@@ -25,13 +25,13 @@
 			<label for="email" class="container-fluid">Mot de passe</label>
 			<p></p>
 			<p></p>
-			<input type="email" class="form-control" id="motdepasse">
+			<input type="email" placeholder="Password" v-model="password"  class="form-control" id="motdepasse">
 		</div> 
 		<p></p>
 		<p></p>
 		<p></p>
 		<div class="col-12 btn-envoyer">
-			<button class="btn btn-warning" type="submit">Se Connecter</button>
+			<button @click="signIn" class="btn btn-warning" type="submit">Se Connecter</button>
 		</div>
 		<p></p>
 		<p></p>
@@ -118,3 +118,38 @@ input {
 	width: fit-content;
 }
   </style>
+
+  <script>
+import { ref } from 'vue'
+import firebase from 'firebase'
+import { useRouter } from 'vue-router' // import router
+const email = ref('')
+const password = ref('')
+const errMsg = ref() // ERROR MESSAGE
+const router = useRouter() // get a reference to our vue router
+const signIn = () => { // we also renamed this method
+	firebase
+		.auth()
+		.signInWithEmailAndPassword(email.value, password.value) // THIS LINE CHANGED
+		.then((data) => {
+			console.log('Successfully logged in!');
+			router.push('/feed') // redirect to the feed
+		})
+		.catch(error => {
+			switch (error.code) {
+				case 'auth/invalid-email':
+					errMsg.value = 'Invalid email'
+					break
+				case 'auth/user-not-found':
+					errMsg.value = 'No account with that email was found'
+					break
+				case 'auth/wrong-password':
+					errMsg.value = 'Incorrect password'
+					break
+				default:
+					errMsg.value = 'Email or password was incorrect'
+					break
+			}
+		});
+}
+</script
