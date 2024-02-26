@@ -1,4 +1,16 @@
 @import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Handlee&display=swap');
+
+h1,
+h2,
+h3 {
+  font-family: 'Handlee', cursive;
+  padding: 20px 0;
+}
+h1,
+h2 {
+  text-align: center;
+}
 
 /* #app {
   max-width: 1280px;
