@@ -7,14 +7,6 @@
 		</div>
 	  </div>
 
-    <form class="formulaire_sofian">
-      <label for="email">Email user</label>
-      <input type="email" id="email" class="email_form">
-      <label for="mdp">Mdp user</label>
-      <input type="text" id="mdp" class="mdp">
-      <button class="" type="submit">Authentifier</button>
-    </form>
-
 	  <form class="myForm" action="/file.php" onsubmit="return validateForm()" method="post">
          <table class="form-style">
             

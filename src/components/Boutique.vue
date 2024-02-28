@@ -6,7 +6,7 @@
 		
 		<div class="col-md-4">
 		  <div class="card" style="width: 18rem;">
-	  <img src="C:\Users\Jerom\projets\dirty-beat-front\src\assets\dbmixetape1.png" class="card-img-top" alt="...">
+	  <img src="C:...\src\assets\dbmixetape1.png" class="card-img-top" alt="...">
 	  <div class="card-body">
 		<h5 class="card-title">Dirty Beat Mixetape</h5>
 		<p class="card-text">15,00e</p>
@@ -23,7 +23,7 @@
 		</div>    
 		   <div class="col-md-4">
 	<div class="card" style="width: 18rem;">
-	  <img src="C:\Users\Jerom\projets\dirty-beat-front\src\assets\dbmixetape2.jpg" class="card-img-top" alt="...">
+	  <img src="C:\src\assets\dbmixetape2.jpg" class="card-img-top" alt="...">
 	  <div class="card-body">
 		<h5 class="card-title">Dirty Beat Mixetape vol.2</h5>
 		<p class="card-text">15,00e</p>
@@ -40,7 +40,7 @@
 		</div>    
 			  <div class="col-md-4">
 	<div class="card" style="width: 18rem;">
-	  <img src="C:\Users\Jerom\projets\dirty-beat-front\src\assets\dirty-beats mixetape3.jpg" class="card-img-top" alt="...">
+	  <img src="C:\src\assets\dirty-beats mixetape3.jpg" class="card-img-top" alt="...">
 	  <div class="card-body">
 		<h5 class="card-title">Dirty Beat Mixetape vol.3</h5>
 		<p class="card-text">15,00e</p>
@@ -77,7 +77,7 @@
 		
 		<div class="col-md-4">
 		  <div class="card" style="width: 18rem;">
-	  <img src="C:\Users\Jerom\projets\dirty-beat-front\src\assets\ghbghg.jpg" class="card-img-top" alt="...">
+	  <img src="C:\src\assets\ghbghg.jpg" class="card-img-top" alt="...">
 	  <div class="card-body">
 		<h5 class="card-title">Tee shirt Dirty Beat</h5>
 			<h6 class="card-subtitle mb-2 text-muted">Modele unique L</h6>
@@ -96,7 +96,7 @@
 
 		<div class="col-md-4">
 		  <div class="card" style="width: 18rem;">
-	  <img src="C:\Users\Jerom\projets\dirty-beat-front\src\assets\dirty tee shirt 2.jpg" class="card-img-top" alt="...">
+	  <img src="C:\src\assets\dirty tee shirt 2.jpg" class="card-img-top" alt="...">
 	  <div class="card-body">
 		<h5 class="card-title">Tee shirt Dirty Beat</h5>
 			<h6 class="card-subtitle mb-2 text-muted">Modele unique L</h6>

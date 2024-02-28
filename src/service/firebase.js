@@ -1,16 +1,22 @@
-import firebase from "firebase/app";
+import firebase from 'firebase/app';
 import "firebase/database";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAliFiLVZ-5hXtG2beHybcGeHzhkkQ01_8",
-  authDomain: "authemejer.firebaseapp.com",
-  databaseURL: "https://authemejer-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "authemejer",
-  storageBucket: "authemejer.appspot.com",
-  messagingSenderId: "139829906148",
-  appId: "1:139829906148:web:5621d6e94f788280003af1"
+  apiKey: "AIzaSyA2E9tUHRDlfJWdY71YOgAH54vje87y_j0",
+  authDomain: "dirty-beat-auth-2802.firebaseapp.com",
+  databaseURL: "https://dirty-beat-auth-2802-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "dirty-beat-auth-2802",
+  storageBucket: "dirty-beat-auth-2802.appspot.com",
+  messagingSenderId: "921605813147",
+  appId: "1:921605813147:web:41232c5fca0a3841a8673e"
 };
 
+
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-export default firebase.database();
+  firebase.initializeApp(firebaseConfig);
+  export default firebase.database()
