@@ -2,36 +2,38 @@
 <template>
 	<div class="container-fluid backoffice">
 	  <div class="row">
-		<div class="col-12">
 			<p></p>
 			<p></p>
 			<p></p>
 			<p></p>
 			<p></p>
 			<p></p>
-		  <h1 >Connexion</h1>
-		</div>
+		  <h1 >S'inscrire</h1>
+		
 	  </div>
-	  <form class="container-fluid row needs-validation" novalidate>
-		<div class="container-fluid">
-			<label for="nom" class="container-sm">Email</label>
-			<p></p>
-			<input type="text" placeholder="Email" v-model="email" class="form-control" id="identifiant" value="">
-		</div>
+	  
+	  <form @submit.prevent="register" class="container-fluid row needs-validation" novalidate>
+		<label for="email" class="form-label">Adresse e-mail</label>
+		<input v-model="email" type="email" class="form-control" id="email"
+		  placeholder="Votre adresse e-mail" required>
 		<p></p>
 		<p></p>
 		<p></p>
 		<div class="container-fluid">
-			<label for="email" class="container-fluid">Mot de passe</label>
-			<p></p>
-			<p></p>
-			<input type="email" placeholder="Password" v-model="password"  class="form-control" id="motdepasse">
+			<label for="password" class="form-label">Mot de passe</label>
+			<input v-model="password" type="password" class="form-control" id="password"
+			  placeholder="Votre mot de passe" required>
+		</div> 
+		<div class="container-fluid">
+			<label for="confirmpassword" class="form-label">Confirmer Mot de passe</label>
+			<input v-model="confirmpassword" type="password" class="form-control" id="password"
+			  placeholder="Votre mot de passe" required>
 		</div> 
 		<p></p>
 		<p></p>
 		<p></p>
 		<div class="col-12 btn-envoyer">
-			<button @click="signIn" class="btn btn-warning" type="submit">Se Connecter</button>
+			<button class="btn btn-primary btn-warning" @submit.prevent="register">Valider</button>
 		</div>
 		<p></p>
 		<p></p>
@@ -60,19 +62,8 @@ template {
 }
 
 .container-fluid {
-	background-color: black;
-	margin: auto;
-	border-width: 100%;
-}
-.container-fluid {
 	color : white;
 	text-align: center;
-	background-color: black;
-	margin: auto;
-	border-width: 100%;
-}
-.col-12 {
-	color: white;
 	background-color: black;
 	margin: auto;
 	border-width: 100%;
@@ -85,22 +76,13 @@ input .form-label, label .container-sm {
 	border-width: 100%;
 }
 
-.btn-envoyer {
+.btn-primary {
 	text-align: center;
-	background-color: black;
+	
 	margin: auto;
 	border-width: 200%;
 	}
 
-.col-md-12 {
-text-align: center;
-background-color: black;
-	}
-
-.col-12 {
-text-align: center;
-background-color: black;
-	}
 #mdpperdu {
 	font-style: italic;
 	background-color: black;
@@ -110,11 +92,35 @@ body {
 	background-color: black;
 }
 .form-control {
-flex: auto;
+
 margin: auto;
 border-width: 100%;
 }
+
 input {
 	width: fit-content;
 }
   </style>
+
+  <script setup>
+  import { ref } from 'vue'
+  import firebase from 'firebase'
+  import { useRouter } from 'vue-router' // import router
+  const email = ref('')
+  const password = ref('')
+  const role = ref('')
+  const router = useRouter() // get a reference to our vue router
+  const register = () => {
+    firebase
+      .auth() // get the auth api
+      .createUserWithEmailAndPassword(email.value, password.value) // need .value because ref()
+      .then((data) => {
+        console.log('SUPER WELCOME GRO!');
+        router.push('/contact') // redirect to the feed
+      })
+      .catch(error => {
+        console.log(error.code)
+        alert(error.message);
+      });
+  }
+  </script>

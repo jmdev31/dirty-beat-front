@@ -1,12 +1,12 @@
 import firebase from 'firebase/app';
 import "firebase/database";
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyA2E9tUHRDlfJWdY71YOgAH54vje87y_j0",
   authDomain: "dirty-beat-auth-2802.firebaseapp.com",
   databaseURL: "https://dirty-beat-auth-2802-default-rtdb.europe-west1.firebasedatabase.app",

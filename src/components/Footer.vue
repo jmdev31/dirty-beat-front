@@ -1,25 +1,19 @@
-<template>
+<!-- <template>
     <footer>
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <form>
+
+              <form @submit.prevent="register" id="newsletter-form">
                 <h3>S'inscrire à la NewsLetter</h3>
-                <div class="row">
-                  <div class="mb-3 col">
-                    <label for="exampleInputEmail1" class="form-label">Nom</label>
-                    <input type="text" class="form-control form-control-sm" id="exampleInputPassword1">
-                  </div>
-                  <div class="mb-3 col">
-                    <label for="exampleInputPassword1" class="form-label">Email</label>
-                    <input type="text" class="form-control form-control-sm" id="exampleInputEmail1"
-                      aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-3 col cs-btn-container">
-                    <button type="submit" class="btn btn-warning btn-sm">Envoyer</button>
-                  </div>
-                </div>
+                
+                <input v-model="name"  type="text" id="name" name="name"  placeholder="Nom" required>
+             <p></p>
+                <input type="email" v-model="email"  id="email" name="email" placeholder="email " required>
+                <p></p>
+                <button type="submit">S'inscrire</button>
               </form>
+
             </div>
             <div class="col-md-6 reseaux">
               <h3>Réseaux sociaux</h3>
@@ -114,3 +108,85 @@ footer .nav-link:first-child {
   padding-left: 0;
 }
   </style>
+
+  <script setup>
+import { ref } from 'vue'
+import firebase from 'firebase/app';
+import "firebase/database";
+import { firebaseConfig } from '../service/firebase.js';
+
+
+
+  </script> -->
+
+  <template>
+    <div id="registerComp" class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card bg-transparent m-3">
+            <div class="card-body">
+              <h2 class="card-title text-center mb-4">Inscription</h2>
+  
+              <!-- Formulaire d'inscription -->
+              <form @submit.prevent="register">
+                <!-- Champ Email -->
+                <div class="mb-3">
+                  <label for="email" class="form-label">Adresse e-mail</label>
+                  <input v-model="email" type="email" class="form-control" id="email"
+                    placeholder="Votre adresse e-mail" required>
+                </div>
+  
+                <!-- Champ Mot de passe -->
+                <div class="mb-3">
+                  <label for="password" class="form-label">Mot de passe</label>
+                  <input v-model="password" type="password" class="form-control" id="password"
+                    placeholder="Votre mot de passe" required>
+                </div>
+  
+                <!-- Bouton d'inscription -->
+                <button class="btn btn-primary" @submit.prevent="register">S'inscrire</button>
+              </form>
+  
+              <!-- Lien vers la page de connexion -->
+              <div class="text-center mt-3">
+                <router-link to="/sign-in">
+                  <p>Déjà inscrit ? <a href="#">Connectez-vous ici</a></p>
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  
+  <script setup>
+  import { ref } from 'vue'
+  import firebase from 'firebase'
+  import { useRouter } from 'vue-router' // import router
+  const email = ref('')
+  const password = ref('')
+  const role = ref('')
+  const router = useRouter() // get a reference to our vue router
+  const register = () => {
+    firebase
+      .auth() // get the auth api
+      .createUserWithEmailAndPassword(email.value, password.value) // need .value because ref()
+      .then((data) => {
+        console.log('SUPER WELCOME GRO!');
+        router.push('/contact') // redirect to the feed
+      })
+      .catch(error => {
+        console.log(error.code)
+        alert(error.message);
+      });
+  }
+  </script>
+  
+  <style scoped lang="css">
+  #registerComp {
+    background-color: #ebf1f7;
+    background-image: linear-gradient(62deg, #ebf1f7 0%, #c3fce9 100%);
+  
+  }
+  </style> 
