@@ -9,9 +9,9 @@
 			<p></p>
 			<p></p>
 		  <h1 >S'inscrire</h1>
-		
 	  </div>
-	  
+
+
 	  <form @submit.prevent="register" class="container-fluid row needs-validation" novalidate>
 		<label for="email" class="form-label">Adresse e-mail</label>
 		<input v-model="email" type="email" class="form-control" id="email"
@@ -40,17 +40,16 @@
 		<p></p>
 		<p></p>
 		<p></p>
-		<div class="col-md-12 mb-3">
-			<label for="mdpperdu" class="form-label" id="mdpperdu">Mot de passe perdu?</label>
-		</div>
 		<p></p>
 		<p></p>
 		<p></p>
 		<p></p>
 		</form>
 		</div>
+
   </template>
   <style scoped>
+
 h1 {
   font-weight: bold;
 }
@@ -116,7 +115,7 @@ input {
       .createUserWithEmailAndPassword(email.value, password.value) // need .value because ref()
       .then((data) => {
         console.log('SUPER WELCOME GRO!');
-        router.push('/contact') // redirect to the feed
+        router.push('/seconnecter') // redirect to the feed
       })
       .catch(error => {
         console.log(error.code)
