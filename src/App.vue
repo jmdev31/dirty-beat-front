@@ -5,9 +5,10 @@ import Footer from './components/Footer.vue'
 </script>
 
 <template>
-<Header />
+<Header v-if="!isPageWithoutHeader" />
   
   <RouterView />
 
-<Footer />
+<Footer v-if="!isPageWithoutFooter" />
 </template>
+

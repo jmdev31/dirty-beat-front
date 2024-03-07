@@ -115,7 +115,7 @@ input {
       .createUserWithEmailAndPassword(email.value, password.value) // need .value because ref()
       .then((data) => {
         console.log('SUPER WELCOME GRO!');
-        router.push('/seconnecter') // redirect to the feed
+        router.push('/validationinscription') // redirect to the feed
       })
       .catch(error => {
         console.log(error.code)

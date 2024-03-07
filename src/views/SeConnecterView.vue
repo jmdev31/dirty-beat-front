@@ -44,7 +44,7 @@
 		<p></p>
 		<p></p>
     
-                <RouterLink class="login-link" to="/backoffice">Pour s'inscrire, cliquez içi!</RouterLink>
+                <RouterLink class="login-link" to="/backoffice"> <h1>Pour s'inscrire, cliquez içi!</h1></RouterLink>
     
 		<p></p>
 		</form>
@@ -129,7 +129,7 @@ const signIn = () => { // we also renamed this method
 		.signInWithEmailAndPassword(email.value, password.value) // THIS LINE CHANGED
 		.then((data) => {
 			console.log('Successfully logged in!');
-			router.push('/') // redirect to the feed
+			router.push('/addproduit') // redirect to the feed
 		})
 		.catch(error => {
 			switch (error.code) {
@@ -148,4 +148,5 @@ const signIn = () => { // we also renamed this method
 			}
 		});
 }
+
 </script>

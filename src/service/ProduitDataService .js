@@ -1,15 +1,15 @@
 import firebase from "firebase";
 // import "firebase/firestore";
 
-const db = firebase.ref("/articles");
+const db = firebase.ref("/produit");
 
-class ArticleDataService {
+class ProduitDataService {
     getAll(){
         return db;
     }
 
-    create(article){
-        return db.push(article);
+    create(produit){
+        return db.push(produit);
     }
 
     update(key, value){
@@ -24,4 +24,4 @@ class ArticleDataService {
         return db.remove();
     }
 }
-export default new ArticleDataService();
+export default new ProduitDataService();
