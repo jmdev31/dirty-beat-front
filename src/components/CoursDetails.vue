@@ -47,7 +47,7 @@
   </template>
     
   <script>
-  import CoursDataService from "../services/CoursDataService";
+  import CoursDataService from "../service/CoursDataService";
   
   export default {
     name: "cours-details",

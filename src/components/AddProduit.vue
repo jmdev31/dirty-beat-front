@@ -28,7 +28,7 @@
 	</template>
 	
 	<script>
-	import ProduitDataService from 'src/service/ProduitDataService.js';
+	import ProduitDataService from '../service/ProduitDataService.js';
 	export default {
 		name:'add-produit',
 		data(){

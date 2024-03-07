@@ -1,7 +1,7 @@
-import firebase from "firebase";
+import firebase from "../firebaseRealTime";
 // import "firebase/firestore";
 
-const db = firebase.ref("/produit");
+const db = firebase.ref("/boutique");
 
 class ProduitDataService {
     getAll(){

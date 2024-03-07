@@ -58,7 +58,7 @@
 		
 		<div class="col-md-4">
 		  <div class="card" style="width: 18rem;">
-	  <img src=".. src\assets\yee shirt dirty beat.jpg" class="card-img-top" alt="...">
+	  <img src="\src\assets\yee shirt dirty beat.jpg" class="card-img-top" alt="...">
 	  <div class="card-body">
 		<h5 class="card-title">Tee shirt Dirty Beat</h5>
 			<h6 class="card-subtitle mb-2 text-muted">Modele unique L</h6>
@@ -114,6 +114,35 @@
 		</div>
 	</div>
 	  </div>
+
+
+
+
+
+	  <div class="container mt-5">
+		<h2 class="text-center mb-4">Derniers Articles du Blog</h2>
+		<!-- Liste de posts de blog -->
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+			<!-- Post 1 -->
+			<div v-for="(oneArticle, index) in produit" :key="oneproduit.key" class="col">
+				<div class="card h-100">
+					<img :src="oneproduit.img" class="card-img-top" alt="Post 1">
+					<div class="card-body">
+						<h5 class="card-title">{{ oneproduit.title }}</h5>
+						<p class="card-text">{{ oneproduit.description }}</p>
+						<a href="#" class="btn btn-primary">Lire la suite</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
 	</template>
 	
 	  <style scoped>
@@ -153,3 +182,71 @@ h5, h6, button {
 		text-align: center;
 	}
 	  </style>
+
+	  <script setup lang='js'>
+import { computed, watch, onMounted, onUpdated, onBeforeUnmount, ref } from 'vue'
+import ProduitDataService  from  '../service/ProduitDataService';
+let produit = ref([]);
+
+const onDataChange = (items) => {
+	let _produit = [];
+
+	items.forEach((item) => {
+		let key = item.key;
+		let data = item.val();
+		_produit.push({
+			key: key,
+			title: data.title,
+			description: data.description,
+			img: data.img,
+			published: data.published,
+		});
+	});
+	produit.value = _produit;
+};
+
+const props = defineProps({
+	// v-model
+	modelValue: {
+		default: '',
+	},
+});
+
+const emit = defineEmits({
+	// v-model event with validation
+	'update:modelValue': (value) => value !== null,
+});
+
+const value = computed({
+	get() {
+		return props.modelValue;
+	},
+	set(value) {
+		emit('update:modelValue', value);
+	},
+});
+
+const stopWatch = watch(
+	() => props.modelValue, async (_newValue, _oldValue) => {
+		// do something
+	},
+	{
+		immediate: true
+	}
+);
+
+onMounted(() => {
+	ProduitDataService.getAll().on("value", onDataChange);
+
+});
+
+onUpdated(() => {
+});
+
+onBeforeUnmount(() => {
+	// stopWatch();
+	ProduitDataService.getAll().off("value", onDataChange);
+
+});
+
+</script>

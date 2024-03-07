@@ -16,7 +16,7 @@ const router = createRouter({
     {
       path: '/addproduit',
       name: 'addproduit',
-      component: () => import('../components/AddProduit.vue'),
+      component: () => import("../components/AddProduit.vue"),
       beforeEnter: authGuard,
     },
     {
@@ -93,7 +93,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../service/ProduitDataService.vue')
+      component: () => import('../service/ProduitDataService.js')
     }
   ]
 })

@@ -129,7 +129,7 @@ const signIn = () => { // we also renamed this method
 		.signInWithEmailAndPassword(email.value, password.value) // THIS LINE CHANGED
 		.then((data) => {
 			console.log('Successfully logged in!');
-			router.push('/addproduit') // redirect to the feed
+			router.push('/addproduit') // redirect to the backoffice ou panier user? afinir
 		})
 		.catch(error => {
 			switch (error.code) {

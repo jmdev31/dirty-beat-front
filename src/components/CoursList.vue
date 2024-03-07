@@ -24,7 +24,7 @@
 </template>
     
 <script>
-import CoursDataService from "../services/CoursDataService";
+import CoursDataService from "../service/CoursDataService.js";
 import CoursDetails from "./CoursDetails.vue";
 
 export default {

@@ -28,7 +28,7 @@
 	</template>
 	
 	<script>
-	import CoursDataService from '../services/CoursDataService.js';
+	import CoursDataService from '../service/CoursDataService.js';
 	// import { marked } from "marked";
 	export default {
 		name:'add-cours',
