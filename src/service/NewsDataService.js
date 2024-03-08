@@ -1,15 +1,15 @@
-import firebase from "firebase";
+import firebase from "../firebaseRealTime";
 // import "firebase/firestore";
 
-const db = firebase.ref("/articles");
+const db = firebase.ref("/news");
 
-class ArticleDataService {
+class NewsDataService {
     getAll(){
         return db;
     }
 
-    create(article){
-        return db.push(article);
+    create(news){
+        return db.push(news);
     }
 
     update(key, value){
@@ -24,4 +24,4 @@ class ArticleDataService {
         return db.remove();
     }
 }
-export default new ArticleDataService();
+export default new NewsDataService();

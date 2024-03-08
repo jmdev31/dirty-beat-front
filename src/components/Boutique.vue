@@ -4,7 +4,7 @@
 	<div class="container mx-auto mt-4">
 	  <div class="row">
 		
-		<div class="col-md-4">
+		<!-- <div class="col-md-4">
 		  <div class="card" style="width: 18rem;">
 	  <img src="C:...\src\assets\dbmixetape1.png" class="card-img-top" alt="...">
 	  <div class="card-body">
@@ -92,15 +92,15 @@
               </div>
 	  </div>
 	  </div>
-		</div>
+		</div> -->
 
-		<div class="col-md-4">
+		<div v-for="(oneproduit, index) in produit" :key="oneproduit.key" class="col-md-4">
 		  <div class="card" style="width: 18rem;">
 	  <img src="C:\src\assets\dirty tee shirt 2.jpg" class="card-img-top" alt="...">
 	  <div class="card-body">
-		<h5 class="card-title">Tee shirt Dirty Beat</h5>
-			<h6 class="card-subtitle mb-2 text-muted">Modele unique L</h6>
-		<p class="card-text">20.00e</p>
+		<h5 class="card-title">{{oneproduit.title}}</h5>
+			<h6 class="card-subtitle mb-2 text-muted">{{oneproduit.description}}</h6>
+		<p class="card-text">{{oneproduit.prix}}</p>
 				<form>
 <input type="button" value=" - " onclick="javascript:this.form.champ.value--;">
 <input type="text" name="champ" value="0" size="1">
@@ -118,24 +118,6 @@
 
 
 
-
-	  <div class="container mt-5">
-		<h2 class="text-center mb-4">Derniers Articles du Blog</h2>
-		<!-- Liste de posts de blog -->
-		<div class="row row-cols-1 row-cols-md-3 g-4">
-			<!-- Post 1 -->
-			<div v-for="(oneArticle, index) in produit" :key="oneproduit.key" class="col">
-				<div class="card h-100">
-					<img :src="oneproduit.img" class="card-img-top" alt="Post 1">
-					<div class="card-body">
-						<h5 class="card-title">{{ oneproduit.title }}</h5>
-						<p class="card-text">{{ oneproduit.description }}</p>
-						<a href="#" class="btn btn-primary">Lire la suite</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 
 
@@ -199,6 +181,7 @@ const onDataChange = (items) => {
 			title: data.title,
 			description: data.description,
 			img: data.img,
+			prix: data.prix,
 			published: data.published,
 		});
 	});

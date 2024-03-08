@@ -20,9 +20,9 @@ const router = createRouter({
       beforeEnter: authGuard,
     },
     {
-      path: "/add-cours",
-      name: "add-cours",
-      component: () => import("../components/AddCours.vue"),
+      path: "/addnews",
+      name: "addnews",
+      component: () => import("../components/AddNews.vue"),
       beforeEnter: authGuard,
     },
     {
@@ -30,15 +30,14 @@ const router = createRouter({
       component: () => import("../components/CoursList.vue"),
      beforeEnter: authGuard,
     },
-
-    {
-      path: '/news',
-      name: 'news',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: NewsView
-    },
+    // {
+    //   path: '/ne',
+    //   name: 'news',
+    //   // route level code-splitting
+    //   // this generates a separate chunk (About.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    //   component: () => import('../views/ContactView.vue')
+    // },
     {
       path: '/apropos',
       name: 'apropos',
@@ -62,6 +61,14 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/BackOfficeView.vue')
+    },
+    {
+      path: '/news',
+      name: 'news',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/NewsView.vue')
     },
     {
       path: '/boutique',
@@ -94,6 +101,14 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../service/ProduitDataService.js')
+    },
+    {
+      path: '/newsdataservice',
+      name: 'newsdataservice',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../service/NewsDataService.js')
     }
   ]
 })

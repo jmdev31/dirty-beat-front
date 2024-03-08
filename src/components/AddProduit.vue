@@ -1,6 +1,9 @@
 <template>
 	<div class="container">
 		<div v-if="!submitted">
+		<li class="nav-item">
+                <RouterLink class="nav-link" to="/addnews">Ajouter une News</RouterLink>
+              </li>
 			<form>
 					<h1>Ajouter Produit</h1>
 				<div class="mb-3">
@@ -16,13 +19,17 @@
 					<textarea v-model="produit.description" class="form-control" rows="3"></textarea>
 				</div>
 				<div class="mb-3">
+					<label for="exampleFormControlTextarea1" class="form-label">Prix</label>
+					<textarea v-model="produit.prix" class="form-control" rows="3"></textarea>
+				</div>
+				<div class="mb-3">
 					<button @click="saveProduit" type="button" class="btn btn-outline-primary">Ajouter un Produit</button>
 				</div>
 			</form>
 			</div>
 			<div v-else>
 				<h4>Produit ajouté en BDD avec Succès</h4>
-				<button class="btn btn-success" @click="newProduit">Add</button>
+				<button class="btn btn-success" @click="newProduit">Votre produit a bien été enregistré!</button>
 			</div>
 		</div>
 	</template>
@@ -35,8 +42,9 @@
 			return{
 			produit: {
 				title: "",
+				img:"", 
 				description: "",
-				img:"",
+				prix:"",
 				published: false
 			},
 			submitted: false
@@ -46,8 +54,9 @@
 			saveProduit(){
 				const nouveauProduit = {
 					title : this.produit.title,
-					description: this.produit.description,
 					img: this.produit.img,
+					description: this.produit.description,
+					prix: this.produit.prix,  //prix etc...
 					published:false
 				};
 				ProduitDataService.create(nouveauProduit)
@@ -63,6 +72,7 @@
 					title :'',
 					description :'',
 					img :'',
+					prix : '',
 					published :false,
 				}
 			}

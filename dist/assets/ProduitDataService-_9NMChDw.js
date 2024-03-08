@@ -1,0 +1,1 @@
+import{C as a}from"./index-ghg2IfFm.js";const r=a.ref("/produit");class u{getAll(){return r}create(e){return r.push(e)}update(e,t){return r.child(e).update(t)}delete(e){return r.child(e).remove()}deleteAll(){return r.remove()}}const o=new u;export{o as default};
