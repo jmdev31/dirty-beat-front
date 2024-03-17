@@ -109,7 +109,12 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../service/NewsDataService.js')
-    }
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: "error404",
+      component: () => import("../views/Error404View.vue")
+  }
   ]
 })
 

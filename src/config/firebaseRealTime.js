@@ -1,4 +1,4 @@
 import firebase from 'firebase/app';
-import "firebase/database";
+import 'firebase/database';
 
 export default firebase.database();

@@ -1,6 +1,6 @@
-// import firebase from '../firebase';
-// import firebase from "firebase/database";
-import firebase from '../firebaseRealTime.js';
+import firebase from '../firebase';
+import firebase from "firebase/database";
+import firebase from '../config/firebaseRealTime.js';
 
 
 const db = firebase.ref("/cours");

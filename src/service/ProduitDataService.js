@@ -1,4 +1,4 @@
-import firebase from "../firebaseRealTime";
+import firebase from "../config/firebaseRealTime";
 // import "firebase/firestore";
 
 const db = firebase.ref("/produit");

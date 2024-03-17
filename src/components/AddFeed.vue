@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 	<div>
 		<div class="card mb-4">
 			<div class="card-body">
@@ -81,4 +81,4 @@ onBeforeUnmount(() => {
 
 </script>
 
-<style scoped lang="css"></style>
+<style scoped lang="css"></style> -->

@@ -1,4 +1,4 @@
-<template>
+ <template>
 	<!-- Contenu principal -->
 	<div class="container mt-5">
 		<h2 class="text-center mb-4">Liste de Cours</h2>
@@ -87,4 +87,4 @@ onBeforeUnmount(() => {
 
 </script>
 
-<style scoped lang="css"></style>
+<style scoped lang="css"></style> -->

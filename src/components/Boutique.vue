@@ -4,7 +4,7 @@
 	<div class="container mx-auto mt-4">
 	  <div class="row">
 		
-		<!-- <div class="col-md-4">
+		<div class="col-md-4">
 		  <div class="card" style="width: 18rem;">
 	  <img src="C:...\src\assets\dbmixetape1.png" class="card-img-top" alt="...">
 	  <div class="card-body">
@@ -92,7 +92,7 @@
               </div>
 	  </div>
 	  </div>
-		</div> -->
+		</div> 
 
 		<div v-for="(oneproduit, index) in produit" :key="oneproduit.key" class="col-md-4">
 		  <div class="card" style="width: 18rem;">
@@ -114,17 +114,6 @@
 		</div>
 	</div>
 	  </div>
-
-
-
-
-
-
-
-
-
-
-
 	</template>
 	
 	  <style scoped>
@@ -232,4 +221,4 @@ onBeforeUnmount(() => {
 
 });
 
-</script>
+</script> 

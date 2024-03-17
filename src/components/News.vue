@@ -6,7 +6,7 @@
       <div class="col-12">
         <h1>News / Events</h1>
       </div>
-    </div>
+    </div> 
     <article>
       <div class="row article-container">
         <h3>Titre de niveau 3</h3>
@@ -26,7 +26,6 @@
 
     <article>
       <div class="row article-container">
-        <h3>Titre de niveau 3</h3>
         <div class="col-md-6 article-img">
           <img src="@/assets/dirty_fest.jpg" alt="dirty fest">
         </div>
@@ -40,26 +39,18 @@
         </div>
       </div>
     </article>
-
-  </div>
+</div>
 		<div v-for="(onenews, index) in news" :key="onenews.key" class="col-md-4">
 		  <div class="card" style="width: 18rem;">
-	  <img src="C:\src\assets\dirty tee shirt 2.jpg" class="card-img-top" alt="...">
+	  <h1> {{onenews.logo}}</h1>
+	    <img src="@/assets/dirty_fest.jpg" alt="dirty fest">
 	  <div class="card-body">
 		<h5 class="card-title">{{onenews.title}}</h5>
-			<h6 class="card-subtitle mb-2 text-muted">{{onenews.description}}</h6>
-				<h1 class="card-subtitle mb-2 text-muted">aaaaaaaa</h1>
-				<form>
-<input type="button" value=" - " onclick="javascript:this.form.champ.value--;">
-<input type="text" name="champ" value="0" size="1">
-<input type="button" value=" + " onclick="javascript:this.form.champ.value++;">
-</form>
-<span></span>
+			<h6 >{{onenews.description}}</h6>
+	  </div>
+	  </div>
+		</div>
 
-<button type="submit" class="btn btn-warning btn-sm">Ajouter au panier</button> 
-	  </div>
-	  </div>
-		</div>  
 </template>
 
  <style scoped>
@@ -75,7 +66,7 @@ h1 {
   }
 </style> 
 
- <script setup lang='js'>
+<script setup lang='js'>
 import { computed, watch, onMounted, onUpdated, onBeforeUnmount, ref } from 'vue'
 import NewsDataService  from  '../service/NewsDataService';
 let news = ref([]);

@@ -1,4 +1,4 @@
-import firebase from "../firebaseRealTime";
+import firebase from "../config/firebaseRealTime";
 const db = firebase.ref("/feed");
 class FeedDataService {
     getAll() {
